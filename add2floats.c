@@ -29,7 +29,17 @@ int main(int argc, char ** argv) {
     f0 = readHex(argv[2]);
     f1 = readHex(argv[3]);
 
-   
+ //extract exponents using bit manipulation
+    int f0exp = (*((int*)&f0) & 0x7F800000)>>23;
+    int f1exp = (*((int*)&f1) & 0x7F800000)>>23;
+
+
+
+    printf("f0=%f\n", f0);
+    printf("f1=%f\n", f1);
+    printf("f0exp=%d\n", f0exp);
+
+
     
     char str[9] = {
       0

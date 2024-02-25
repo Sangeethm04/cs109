@@ -29,18 +29,31 @@ int main(int argc, char ** argv) {
     f0 = readHex(argv[2]);
     f1 = readHex(argv[3]);
 
- //extract exponents using bit manipulation
-    int f0exp = (*((int*)&f0) & 0x7F800000)>>23;
-    int f1exp = (*((int*)&f1) & 0x7F800000)>>23;
+    //extract exponents using bit manipulation
+    int f0exp = (( * ((int * ) & f0) & 0x7F800000) >> 23) - 127;
+    int f1exp = (( * ((int * ) & f1) & 0x7F800000) >> 23) - 127;
 
 
+    if (f0exp < f1exp) {
+      f0 = f0 * (1 << (f1exp - f0exp));
+      f0exp = f1exp;
+    } else {
+      f1 = f1 * (1 << (f0exp - f1exp));
+      f1exp = f0exp;
+    }
 
     printf("f0=%f\n", f0);
     printf("f1=%f\n", f1);
     printf("f0exp=%d\n", f0exp);
+    printf("f1exp=%d\n", f1exp);
+
+    //extract mantissas using bit manipulation
+    int f0mant = ( * ((int * ) & f0) & 0x007FFFFF) | 0x00800000;
+    int f1mant = ( * ((int * ) & f1) & 0x007FFFFF) | 0x00800000;
+
+    printf("f0mant=%d\n", f0mant);
 
 
-    
     char str[9] = {
       0
     }; /* do not change */
@@ -83,8 +96,7 @@ float readHex(char * str) {
       c = str[i] - '0';
     } else if (str[i] >= 'A' && str[i] <= 'F') {
       c = str[i] - 'A' + 10;
-    }
-    else if (str[i] >= 'a' && str[i] <= 'f') {
+    } else if (str[i] >= 'a' && str[i] <= 'f') {
       c = str[i] - 'a' + 10;
     } else {
       exit(98);
@@ -106,7 +118,8 @@ void genHex(float f, char * str) {
   union {
     float f;
     uint8_t b[4];
-  }u;
-  (void)u;
+  }
+  u;
+  (void) u;
   /* insert code here */
 }

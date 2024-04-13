@@ -10,7 +10,7 @@
 int main(void) {
   int pfd[2]; /* for pipe file descriptors (pfd); need 2 file descripts b/c pipe has 2 ends! */
   pid_t pid = 0; /* for PID from fork() */
-  char string[] = "Mind over mattressss!\n"; /* for testing */
+  char string[] = "Mind over mattresssss!\n"; /* for testing */
   char buffer[80]; /* hold string read from pipe */
   ssize_t numBytes; /* count of bytes written or read */
   /* Insert here some variables needed by nanosleep */

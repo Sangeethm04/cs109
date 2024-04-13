@@ -1,0 +1,116 @@
+Breakpoint 1 at 0x4005de: file swap0.c, line 6.
+Breakpoint 2 at 0x40060b: file swap0.c, line 9.
+Starting program: /home/svm227/cse109/Recitations/r1-svm227/swap0 
+
+Breakpoint 1, main () at swap0.c:6
+Missing separate debuginfos, use: yum debuginfo-install glibc-2.28-236.el8_9.7.x86_64
+
+Breakpoint 2, main () at swap0.c:9
+$1 = -1
+$2 = (int *) 0x7fffffffd23c
+Continuing.
+[Inferior 1 (process 2090921) exited normally]
+The program is not being run.
+Starting program: /home/svm227/cse109/Recitations/r1-svm227/swap0 
+
+Breakpoint 1, main () at swap0.c:6
+
+Breakpoint 2, main () at swap0.c:9
+swap (a=-1, b=1) at swap0.c:15
+Continuing.
+[Inferior 1 (process 2091126) exited normally]
+The program is not being run.
+The program is not being run.
+Starting program: /home/svm227/cse109/Recitations/r1-svm227/swap0 
+
+Breakpoint 1, main () at swap0.c:6
+$3 = -1
+Continuing.
+
+Breakpoint 2, main () at swap0.c:9
+Continuing.
+[Inferior 1 (process 2091177) exited normally]
+No symbol "x" in current context.
+Starting program: /home/svm227/cse109/Recitations/r1-svm227/swap0 
+
+Breakpoint 1, main () at swap0.c:6
+$4 = -1
+Undefined command: "pring".  Try "help".
+$5 = 1
+$6 = (int *) 0x7fffffffd23c
+$7 = (int *) 0x7fffffffd238
+
+Breakpoint 2, main () at swap0.c:9
+swap (a=-1, b=1) at swap0.c:15
+$8 = -1
+$9 = 1
+$10 = 1
+$11 = -1
+main () at swap0.c:10
+$12 = -1
+$13 = 1
+Reading symbols from swap0...done.
+warning: Source file is more recent than executable.
+4	in /home/svm227/cse109/Recitations/r1-svm227/swap0.c
+Already logging to gdb.txt.
+Breakpoint 1 at 0x4005de: file swap0.c, line 6.
+Breakpoint 2 at 0x40060b: file swap0.c, line 9.
+Starting program: /home/svm227/cse109/Recitations/r1-svm227/swap0 
+
+Breakpoint 1, main () at swap0.c:6
+Missing separate debuginfos, use: yum debuginfo-install glibc-2.28-236.el8_9.7.x86_64
+$1 = -1
+$2 = 1
+$3 = (int *) 0x7fffffffd23c
+$4 = (int *) 0x7fffffffd238
+Continuing.
+
+Breakpoint 2, main () at swap0.c:9
+swap (a=-1, b=1) at swap0.c:15
+$5 = -1
+$6 = 1
+$7 = -1
+main () at swap0.c:10
+$8 = -1
+$9 = 1
+Reading symbols from swap1...done.
+Breakpoint 1 at 0x4005de: file swap1.c, line 6.
+Breakpoint 2 at 0x40060b: file swap1.c, line 9.
+Starting program: /home/svm227/cse109/Recitations/r1-svm227/swap1 
+
+Breakpoint 1, main () at swap1.c:6
+Missing separate debuginfos, use: yum debuginfo-install glibc-2.28-236.el8_9.7.x86_64
+$1 = -1
+$2 = 1
+$3 = (int *) 0x7fffffffd23c
+$4 = (int *) 0x7fffffffd238
+Continuing.
+
+Breakpoint 2, main () at swap1.c:9
+swap (a=0x7fffffffd23c, b=0x7fffffffd238) at swap1.c:15
+$5 = (int *) 0x7fffffffd23c
+$6 = (int *) 0x7fffffffd238
+$7 = (int *) 0x7fffffffd23c
+main () at swap1.c:10
+$8 = -1
+$9 = 1
+Breakpoint 1 at 0x4005de: file swap2.c, line 6.
+Breakpoint 2 at 0x40060f: file swap2.c, line 9.
+Starting program: /home/svm227/cse109/Recitations/r1-svm227/swap2 
+
+Breakpoint 1, main () at swap2.c:6
+Missing separate debuginfos, use: yum debuginfo-install glibc-2.28-236.el8_9.7.x86_64
+$1 = (int *) 0xffffffffffffffff
+$2 = (int *) 0x1
+$3 = (int **) 0x7fffffffd238
+$4 = (int **) 0x7fffffffd230
+Continuing.
+
+Breakpoint 2, main () at swap2.c:9
+swap (a=0xffffffffffffffff, b=0x1) at swap2.c:15
+$5 = (int *) 0xffffffffffffffff
+$6 = (int *) 0x1
+$7 = (int *) 0xffffffffffffffff
+main () at swap2.c:10
+$8 = (int *) 0xffffffffffffffff
+$9 = (int *) 0x1

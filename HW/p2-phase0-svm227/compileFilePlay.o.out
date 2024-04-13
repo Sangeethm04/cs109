@@ -1,0 +1,4 @@
+filePlay.c:8:11: warning: variable 'mode' set but not used [-Wunused-but-set-variable]
+  emode_t mode = AS_IS;
+          ^
+1 warning generated.

@@ -1,0 +1,17 @@
+gcc -g -c -Wall -Wextra -Wwrite-strings cIncludes.c
+cIncludes.c:35:67: warning: incompatible pointer types passing 'IncludeFile[5000]' to parameter of type 'IncludeFile **' [-Wincompatible-pointer-types]
+    parseArgsAndOpenFiles(argc, argv, &cFile, &dir, &total, &sum, includeFiles);
+                                                                  ^~~~~~~~~~~~
+./cIncludesFuncs.h:6:113: note: passing argument to parameter 'headerFiles' here
+void parseArgsAndOpenFiles(int argc, char** argv, FILE** cFile, DIR** dir, int* total, int *sum, IncludeFile ** headerFiles);
+                                                                                                                ^
+cIncludes.c:36:34: warning: incompatible pointer types passing 'IncludeFile[5000]' to parameter of type 'IncludeFile **' [-Wincompatible-pointer-types]
+    addFile(cFile, &total, &sum, includeFiles);
+                                 ^~~~~~~~~~~~
+./cIncludesFuncs.h:7:64: note: passing argument to parameter 'headerFiles' here
+void addFile(FILE* cFile, int *total, int *sum, IncludeFile ** headerFiles);
+                                                               ^
+2 warnings generated.
+gcc -g -c -Wall -Wextra -Wwrite-strings cIncludesFuncs.c
+gcc -g -c -Wall -Wextra -Wwrite-strings syscalls.c
+gcc -g -o cIncludes cIncludes.o cIncludesFuncs.o syscalls.o

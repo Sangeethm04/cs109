@@ -1,0 +1,11 @@
+# 'Co'
+s 0 713208  # ftell should return 713208 (check first to make sure you don't go beyond end of file!)
+w 28483  # write this short into the file at the current location
+s 1 -2  # back up 2 bytes (since write moved the position indicator 2 bytes forward)
+r 0 0  # read two bytes and place into messages[0] starting at byte offset 0
+# 'rp'
+s 2 -613214 # ftell should return 435362 (1048576 - 613214)
+w 28786  # write this short into the file at the current location
+s 0 435362  # seek to offset 435362
+r 1 2  # read two bytes and place into messages[1] starting at byte offset 4
+# to see "rp", use GDB! print messages[1].str[4] <== should return 'r'; str[5] should have 'p'

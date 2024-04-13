@@ -1,0 +1,5 @@
+# 'Co'
+s 0 713208  # ftell should return 713208 (check first to make sure you don't go beyond end of file!)
+w 28483  # write this short into the file at the current location
+s 1 -2  # back up 2 bytes
+r 0 0  # read 2 bytes and place into message[0] starting at byte 0

@@ -1,0 +1,18 @@
+gcc -g -c -Wall -Wextra -Wwrite-strings syscalls.c
+gcc -g -c -Wall -Wextra -Wwrite-strings filePlayFuncs.c
+filePlayFuncs.c:73:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+}
+^
+filePlayFuncs.c:85:10: warning: unused variable 'chars_read' [-Wunused-variable]
+  size_t chars_read = 1;
+         ^
+filePlayFuncs.c:87:8: warning: unused variable 'chrac' [-Wunused-variable]
+  char chrac[100];
+       ^
+3 warnings generated.
+gcc -g -c -Wall -Wextra -Wwrite-strings filePlay.c
+filePlay.c:8:11: warning: variable 'mode' set but not used [-Wunused-but-set-variable]
+  emode_t mode = AS_IS;
+          ^
+1 warning generated.
+gcc -g -o filePlay filePlay.o filePlayFuncs.o syscalls.o

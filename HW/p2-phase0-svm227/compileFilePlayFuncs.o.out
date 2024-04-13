@@ -1,0 +1,10 @@
+filePlayFuncs.c:73:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+}
+^
+filePlayFuncs.c:85:10: warning: unused variable 'chars_read' [-Wunused-variable]
+  size_t chars_read = 1;
+         ^
+filePlayFuncs.c:87:8: warning: unused variable 'chrac' [-Wunused-variable]
+  char chrac[100];
+       ^
+3 warnings generated.

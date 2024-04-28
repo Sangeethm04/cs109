@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
             proc1.addRssUsage("Rss:");
             proc1.addPssUsage("Pss:");
             proc1.addCwd();
-            std::cout << "RSS: " << proc1.getRss() << "PSS: " << proc1.getPss() <<  "CWD: " << proc1.getCwd() << std::endl;
+            std::cout << "Username: " << proc1.getName() << "PID: " << proc1.getPid() << "RSS: " << proc1.getRss() << "PSS: " << proc1.getPss() <<  "CWD: " << proc1.getCwd() << std::endl;
         } else if(option == "-u" || option == "user") {
             if(argc > 2) {
                 username = argv[2];

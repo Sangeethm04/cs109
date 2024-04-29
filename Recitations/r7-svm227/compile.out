@@ -1,0 +1,4 @@
+g++ -g -c -Wall -Wextra -Wwrite-strings socketpair.cpp
+g++ -g -c -Wall -Wextra -Wwrite-strings syscalls.c
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated [-Wdeprecated]
+g++ -g -o socketpair socketpair.o syscalls.o

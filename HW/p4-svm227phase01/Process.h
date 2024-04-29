@@ -1,4 +1,6 @@
 #include "syscalls.h"
+#include <iostream>
+#include <fstream>
 #include <pwd.h>
 
 
@@ -24,6 +26,13 @@ class Process {
 
         return ProgName;
     }
+
+    // Overloading << operator
+    friend std::ostream & operator << (std::ostream & out, const Process & proc) {
+        out << proc.userName << "  " << proc.pid << "  " << proc.rss << "  " << proc.pss << "  " << proc.cwd << std::endl;
+        return out;
+    }
+
 
     std::string getUsername() {
         return userName;
@@ -98,11 +107,10 @@ class Process {
     //print cwd with /proc/$pid/cwd
     void addCwd() {
         std::string pids = std::to_string(pid);
-        std::string filePath = "/proc/" + pids + "/cwd";
-        char * buf = new char[1024];
-        ssize_t len = readlink(filePath.c_str(), buf, 1024);
-        buf[len] = '\0';
-        cwd = buf;
+        std::ifstream file("/proc/" + pids + "/cmdline");
+        std::string line;
+        std::getline(file, line);
+        cwd = line;
     }
 
     //print name of prog /proc/$pid/status only the first line is needed

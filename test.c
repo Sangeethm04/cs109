@@ -1,15 +1,14 @@
 #include <stdio.h>
 
-void flipSign(float *);
-
 int main() {
-  float f = 33.33;
-  flipSign(&f);
-  fprintf(stdout, "%f\n", f);
-  return 0; 
-}
+    short num = 1;
+    char *ptr = &num;
 
-void flipSign(float *f) {
-    float z = -1.0;
-    *f = *f * z;
+    if (*ptr == 1) {
+        printf("Little Endian\n");
+    } else {
+        printf("Big Endian\n");
+    }
+
+    return 0;
 }
